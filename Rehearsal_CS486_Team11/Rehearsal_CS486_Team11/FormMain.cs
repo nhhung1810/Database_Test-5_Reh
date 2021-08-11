@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Rehearsal_CS486_Team11
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
