@@ -1,4 +1,50 @@
 
+CREATE OR ALTER TRIGGER DuplicateSong
+ON Song
+AFTER INSERT, UPDATE
+AS
+BEGIN
+
+	DECLARE @songId INT
+	DECLARE @songName nvarchar(50)
+
+	SELECT @songId = ID, @songName = Name FROM inserted
+
+	
+
+	IF EXISTS (SELECT * 
+				FROM Song 
+				WHERE ID = @songId OR Name LIKE @songName)
+	BEGIN
+		raiserror('Song must not have the same ID or Name', 15, 0)
+		ROLLBACK
+	END
+END
+GO
+
+CREATE OR ALTER TRIGGER DuplicateAuthor
+ON Author
+AFTER INSERT, UPDATE
+AS
+BEGIN
+
+	DECLARE @ID INT
+	DECLARE @Name nvarchar(50)
+
+	SELECT @ID = ID, @Name = Name FROM inserted
+
+	
+
+	IF EXISTS (SELECT * 
+				FROM Author 
+				WHERE ID = @ID OR Name LIKE @Name)
+	BEGIN
+		raiserror('Author must not have the same ID or Name', 15, 0)
+		ROLLBACK
+	END
+END
+GO
+
 USE master
 go
 create database CS468_team11_DB
