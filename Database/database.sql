@@ -21,7 +21,7 @@ CREATE TABLE Song
     views int,
     official int,
     quality varchar(5),
-    releaseData date,
+    releaseData date
 );
 GO
 
