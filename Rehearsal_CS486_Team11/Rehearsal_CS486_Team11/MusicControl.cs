@@ -18,10 +18,9 @@ namespace Rehearsal_CS486_Team11
             addControl(new Label { Text = author }, 20, 0, 40);
             addControl(new Label
             {
-                ForeColor = official ? Color.Gray : Color.Transparent,
-                Text = "OFFICIAL",
+                Text = official ? "OFFICIAL" : "",
                 AutoSize = true
-            }, 20, 0);
+            }, 20, 0,40);
             addControl(new Label
             {
                 ForeColor = sq ? Color.Red : Color.Cyan,

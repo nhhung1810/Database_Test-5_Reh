@@ -13,6 +13,9 @@ namespace Rehearsal_CS486_Team11
 {
     public partial class FormKhoa : Form
     {
+        private string conString = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;"
+                                 + "Initial Catalog=CS468_Team11_DB;"
+                                 + "Integrated Security=True";
         public FormKhoa()
         {
             InitializeComponent();
@@ -24,26 +27,32 @@ namespace Rehearsal_CS486_Team11
         }
         public void LoadMusic(int index)
         {
-            //Connecting to database
-            string conString = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;"
-                                     + "Initial Catalog=CS468_team11_DB;"
-                                     + "Integrated Security=True";
-            SqlConnection cnn = new SqlConnection(conString);
-            cnn.Open();
-            string sql = "select * from Category where id = Parentid";
-            SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
-            DataSet data = new DataSet();
-            adapter.Fill(data);
-            if (data.Tables.Count == 0) return;
-            
-            //Setting up the panel
-            flowPanel.Controls.Clear();
-            flowPanel.FlowDirection = FlowDirection.TopDown;
-            flowPanel.AutoScroll = true;
-            flowPanel.WrapContents = false;
-            //Set 
-            for (int i = 0; i < 100; i++)
-                flowPanel.Controls.Add(new MusicControl("Bacon", "Bacon", true, true, "10213123"));
+            try
+            {
+                //Setting up the panel
+                flowPanel.Controls.Clear();
+                flowPanel.FlowDirection = FlowDirection.TopDown;
+                flowPanel.AutoScroll = true;
+                flowPanel.WrapContents = false;
+                //Connecting to database
+                SqlConnection cnn = new SqlConnection(conString);
+                cnn.Open();
+                string sql = $"SELECT * FROM CS486_Team11_DB.dbo.getSongList({index})";
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = new SqlCommand(sql, cnn);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                if (data.Tables.Count == 0) return;
+                foreach (DataRow r in data.Tables[0].Rows)
+                {
+                    flowPanel.Controls.Add(new MusicControl(r[0].ToString(), r[1].ToString()
+                        , r[2].ToString() == "1", r[3].ToString() == "HQ", r[4].ToString()));
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
         private void FormKhoa_Load(object sender, EventArgs e)
         {
@@ -58,9 +67,6 @@ namespace Rehearsal_CS486_Team11
         {
             try
             {
-                string conString = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;"
-                                         + "Initial Catalog=CS468_team11_DB;"
-                                         + "Integrated Security=True";
                 SqlConnection cnn = new SqlConnection(conString); 
                 cnn.Open();
                 string sql = "select * from Category where id = Parentid";
@@ -140,6 +146,11 @@ namespace Rehearsal_CS486_Team11
         {
             Button button = sender as Button;
             LoadMusic(int.Parse(button.Name));
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -151,8 +151,7 @@ AS
 
 go
 
--- SELECT * from dbo.getSongList(5)
-
+SELECT * from dbo.getSongList(0)
 go
 use master
 go

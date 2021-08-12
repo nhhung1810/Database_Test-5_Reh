@@ -36,6 +36,7 @@ namespace Rehearsal_CS486_Team11
             this.flpMusicList = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.flpMusicList.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +50,7 @@ namespace Rehearsal_CS486_Team11
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(770, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(632, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,7 +84,7 @@ namespace Rehearsal_CS486_Team11
             this.flpMusicList.Location = new System.Drawing.Point(0, 24);
             this.flpMusicList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flpMusicList.Name = "flpMusicList";
-            this.flpMusicList.Size = new System.Drawing.Size(770, 154);
+            this.flpMusicList.Size = new System.Drawing.Size(632, 319);
             this.flpMusicList.TabIndex = 1;
             // 
             // button1
@@ -101,16 +102,27 @@ namespace Rehearsal_CS486_Team11
             // 
             // flowPanel
             // 
-            this.flowPanel.Location = new System.Drawing.Point(12, 183);
+            this.flowPanel.Location = new System.Drawing.Point(12, 374);
             this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(746, 283);
+            this.flowPanel.Size = new System.Drawing.Size(608, 238);
             this.flowPanel.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 358);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "BÀI HÁT HOT NHẤT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FormKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 478);
+            this.ClientSize = new System.Drawing.Size(632, 624);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flpMusicList);
             this.Controls.Add(this.flowPanel);
             this.Controls.Add(this.menuStrip1);
@@ -136,5 +148,6 @@ namespace Rehearsal_CS486_Team11
         private System.Windows.Forms.FlowLayoutPanel flpMusicList;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowPanel;
+        private System.Windows.Forms.Label label1;
     }
 }
