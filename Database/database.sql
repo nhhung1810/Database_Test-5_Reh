@@ -88,3 +88,49 @@ values
 (9,'Quen Mot nguoi that kho', '2021-05-25', 237427, 1, 'HQ'),
 (10,'Khi nguoi lon co don', '2021-05-11', 60557, 1, 'HQ')
 
+insert into CatSong(catid,songId)
+values
+(1,5),
+(2,6),
+(3,5),
+(4,6),
+(5,7),
+(6,8),
+(7,5),
+(8,6),
+(9,7),
+(10,5)
+
+insert into author(id,name)
+values
+(1,'Do MIXI'),
+(2,'Phuc Du'),
+(3,'Phao'),
+(4,'Phan Manh Quynh'),
+(5,'Masew'),
+(6,'Ogenus'),
+(7,'Ron Vinh'),
+(8,'Niet'),
+(9,'Khoi Vu'),
+(10,'FAY'),
+(11,'Vu Phung Tien'),
+(12,'Cao Nam Thanh'),
+(13,'Quang Vinh')
+
+insert into songAuthor(SongID, AuthorId)
+values
+(1,1),
+(2,1),
+(3,1),
+(4,2),
+(5,1),
+(6,3),
+(7,4),
+(8,5),
+(9,6),
+(10,7),
+(11,8),
+(12,9),
+(13,10)
+drop database CS486_Team11_DB
+go
