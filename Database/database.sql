@@ -225,7 +225,7 @@ AS
 
 go
 
-go
-use master
-go
-drop database CS486_Team11_DB
+-- go
+-- use master
+-- go
+-- drop database CS486_Team11_DB
