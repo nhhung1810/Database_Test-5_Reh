@@ -11,25 +11,21 @@ using System.Windows.Forms;
 
 namespace Rehearsal_CS486_Team11
 {
-    public partial class Form1 : Form
+    public partial class AddSongForm : Form
     {
         SqlConnection connect = new SqlConnection();
-        public Form1()
+        public AddSongForm(SqlConnection Connect)
         {
+            connect = Connect;
             InitializeComponent();
-            connect.ConnectionString = @"Data Source=DESKTOP-MUE9P6C\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True";
-            connect.Open();
         }
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
-            AddSongForm nf = new AddSongForm(connect);
-            nf.ShowDialog();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            connect.Close();
+            string sql = $"EXEC addSong {songId.Text}, '{songName.Text}', {songViews.Text}, {songOfficial.Text}, '{songQuality.Text}', '{songRelease.Text}'";
+            SqlCommand cmd = new SqlCommand(sql, connect);
+            cmd.ExecuteNonQuery();
+            this.Close();
         }
     }
 }
