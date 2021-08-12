@@ -46,33 +46,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormKhoa.cs">
+    <Compile Include="SET\AddAuthorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKhoa.Designer.cs">
+    <Compile Include="SET\AddAuthorForm.Designer.cs">
+      <DependentUpon>AddAuthorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SET\AddCatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SET\AddCatForm.Designer.cs">
+      <DependentUpon>AddCatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SET\AddCatSongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SET\AddCatSongForm.Designer.cs">
+      <DependentUpon>AddCatSongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SET\AddSongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SET\AddSongForm.Designer.cs">
+      <DependentUpon>AddSongForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAboutUsTeam11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAboutUsTeam11.Designer.cs">
+      <DependentUpon>FormAboutUsTeam11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GET\FormKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GET\FormKhoa.Designer.cs">
       <DependentUpon>FormKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="MusicControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MusicList.cs">
+    <Compile Include="GET\MusicList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MusicList.Designer.cs">
+    <Compile Include="GET\MusicList.Designer.cs">
       <DependentUpon>MusicList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormKhoa.resx">
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SET\AddAuthorForm.resx">
+      <DependentUpon>AddAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SET\AddCatForm.resx">
+      <DependentUpon>AddCatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SET\AddCatSongForm.resx">
+      <DependentUpon>AddCatSongForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAboutUsTeam11.resx">
+      <DependentUpon>FormAboutUsTeam11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GET\FormKhoa.resx">
       <DependentUpon>FormKhoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MusicList.resx">
+    <EmbeddedResource Include="GET\MusicList.resx">
       <DependentUpon>MusicList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

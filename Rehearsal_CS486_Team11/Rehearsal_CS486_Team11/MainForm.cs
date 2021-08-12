@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Rehearsal_CS486_Team11
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         SqlConnection connect = new SqlConnection();
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             connect.ConnectionString = @"Data Source=DESKTOP-MUE9P6C\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True";
@@ -23,6 +23,7 @@ namespace Rehearsal_CS486_Team11
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
+            
             AddSongForm nf = new AddSongForm(connect);
             nf.ShowDialog();
         }
