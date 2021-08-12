@@ -26,5 +26,20 @@ namespace TestApplication.Get
                 dataGrid.DataSource = ds.Tables[0];
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string q = "select * from song where id = @id";
+            Dictionary<string, string> ps = new Dictionary<string, string>()
+            {
+                {"id", "(1, 2, 4, 5)"}
+            };
+
+            DataTable dt = Misc.getData(q, ps);
+            if(dt != null && dt.Rows.Count > 0)
+            {
+                dataGrid.DataSource = dt;
+            }
+        }
     }
 }

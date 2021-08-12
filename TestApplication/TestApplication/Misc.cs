@@ -51,7 +51,7 @@ namespace TestApplication
             DataSet ds = null;
             using(SqlConnection conn = new SqlConnection(getConnectionString()))
             {
-                MessageBox.Show(conn.ConnectionString);
+                //MessageBox.Show(conn.ConnectionString);
                 //connection automatically close when go out of scope
                 try { conn.Open(); }
                 catch(Exception e)
@@ -73,6 +73,50 @@ namespace TestApplication
                 }
             }
             return ds;
+        }
+
+        public static DataTable getData(string q, Dictionary<string, string> parameters)
+        {
+            DataTable dt = null;
+            //IDictionary<string, string> param = parameters;
+            using (SqlConnection conn = new SqlConnection(getConnectionString()))
+            using (SqlCommand cmd = new SqlCommand(q, conn))
+            {
+                //try to connect
+                try { conn.Open(); }
+                catch (Exception e)
+                {
+                    //if the connection is broken
+                    System.Console.WriteLine(e.ToString());
+                    if (conn.State != ConnectionState.Closed) conn.Close();
+                    return null;
+                }
+
+                foreach(KeyValuePair<string, string>p in parameters)
+                {
+                    //SqlParameter sp = new SqlParameter("@" + p.Key, p.Value);
+                    MessageBox.Show("@" + p.Key + " " + p.Value);
+                    cmd.Parameters.AddWithValue("@" + p.Key, p.Value);
+                    //MessageBox.Show(cmd.Parameters.);
+                }
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                
+                try
+                {
+                    dt = new DataTable();
+                    dt.Load(reader);
+                }
+                catch(Exception e)
+                {
+                    System.Console.Write(e.ToString());
+                    dt = null;
+                }
+
+                reader.Close();
+                
+            }
+            return dt;
         }
     }
 }
