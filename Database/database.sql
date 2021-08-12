@@ -139,8 +139,8 @@ returns table
 AS
     return(
         select 
-            s.name, STRING_AGG(a.name, ', ') as authorNames,
-            s.official, s.quality, s.views 
+            s.name as name, STRING_AGG(a.name, ', ') as authorNames,
+            s.official as official, s.quality as quality, s.views as views 
         from Song as s
         join SongAuthor as sa on s.id = sa.SongID
         join author as a on sa.AuthorId = a.id
