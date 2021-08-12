@@ -13,14 +13,18 @@ namespace Rehearsal_CS486_Team11
 {
     public partial class AddSongForm : Form
     {
-        public AddSongForm(SqlConnection connect)
+        SqlConnection connect = new SqlConnection();
+        public AddSongForm(SqlConnection Connect)
         {
+            connect = Connect;
             InitializeComponent();
         }
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
-            string sql = $"";
+            string sql = $"EXEC addSong {songId.Text}, '{songName.Text}', {songViews.Text}, {songOfficial.Text}, '{songQuality.Text}', '{songRelease.Text}'";
+            SqlCommand cmd = new SqlCommand(sql, connect);
+            cmd.ExecuteNonQuery();
             this.Close();
         }
     }

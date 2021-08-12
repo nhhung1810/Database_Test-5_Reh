@@ -17,13 +17,13 @@ namespace Rehearsal_CS486_Team11
         public Form1()
         {
             InitializeComponent();
-            connect.ConnectionString = @"Data Source=DESKTOP-MUE9P6C\SQLEXPRESS;Initial Catalog=CS468_team11_DB;Integrated Security=True";
+            connect.ConnectionString = @"Data Source=DESKTOP-MUE9P6C\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True";
             connect.Open();
         }
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
-            AddSongForm nf = new AddSongForm();
+            AddSongForm nf = new AddSongForm(connect);
             nf.ShowDialog();
         }
 
