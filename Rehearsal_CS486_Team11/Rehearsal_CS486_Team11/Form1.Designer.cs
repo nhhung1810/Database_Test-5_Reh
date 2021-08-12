@@ -28,13 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.AddSongButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // AddSongButton
+            // 
+            this.AddSongButton.Location = new System.Drawing.Point(12, 12);
+            this.AddSongButton.Name = "AddSongButton";
+            this.AddSongButton.Size = new System.Drawing.Size(75, 23);
+            this.AddSongButton.TabIndex = 0;
+            this.AddSongButton.Text = "Add song";
+            this.AddSongButton.UseVisualStyleBackColor = true;
+            this.AddSongButton.Click += new System.EventHandler(this.AddSongButton_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AddSongButton);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button AddSongButton;
     }
 }
 
