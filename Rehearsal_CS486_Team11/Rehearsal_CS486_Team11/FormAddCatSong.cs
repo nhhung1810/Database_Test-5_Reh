@@ -22,7 +22,7 @@ namespace Rehearsal_CS486_Team11
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseName"].ConnectionString;
             SqlCommand cmd = new SqlCommand("addCatSong", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = txtSongID.Text;
