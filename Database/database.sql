@@ -46,8 +46,7 @@ create table Songcat(
 )
 
 go
-use master
-go
+
 insert into Category(id, name, parentId)
 values
 (1,'Viet Nam',1),
@@ -132,5 +131,8 @@ values
 (11,8),
 (12,9),
 (13,10)
-drop database CS486_Team11_DB
+
 go
+use master
+go
+drop database CS486_Team11_DB
