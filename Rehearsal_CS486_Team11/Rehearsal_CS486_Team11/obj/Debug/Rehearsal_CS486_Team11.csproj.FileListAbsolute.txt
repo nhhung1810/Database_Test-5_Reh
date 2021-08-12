@@ -1,0 +1,10 @@
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.exe.config
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.exe
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.pdb
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csprojAssemblyReference.cache
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.Properties.Resources.resources
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csproj.GenerateResource.cache
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csproj.CoreCompileInputs.cache
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.exe
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.pdb
+E:\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.MusicList.resources
