@@ -22,19 +22,46 @@ namespace Rehearsal_CS486_Team11
         {
             Application.Exit();
         }
-
+        public void LoadMusic(int index)
+        {
+            //Connecting to database
+            string conString = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;"
+                                     + "Initial Catalog=CS468_team11_DB;"
+                                     + "Integrated Security=True";
+            SqlConnection cnn = new SqlConnection(conString);
+            cnn.Open();
+            string sql = "select * from Category where id = Parentid";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
+            DataSet data = new DataSet();
+            adapter.Fill(data);
+            if (data.Tables.Count == 0) return;
+            
+            //Setting up the panel
+            flowPanel.Controls.Clear();
+            flowPanel.FlowDirection = FlowDirection.TopDown;
+            flowPanel.AutoScroll = true;
+            flowPanel.WrapContents = false;
+            //Set 
+            for (int i = 0; i < 100; i++)
+                flowPanel.Controls.Add(new MusicControl("Bacon", "Bacon", true, true, "10213123"));
+        }
         private void FormKhoa_Load(object sender, EventArgs e)
         {
             flpMusicList.AutoScroll = true;
             flpMusicList.FlowDirection = FlowDirection.TopDown;
             flpMusicList.WrapContents = false;
             initMusicList();
+
+            LoadMusic(0);
         }
         public void initMusicList()
         {
             try
             {
-                SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-SMBGUUTC\SQLEXPRESS01;Initial Catalog=CS468_team11_DB;Integrated Security=True");
+                string conString = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;"
+                                         + "Initial Catalog=CS468_team11_DB;"
+                                         + "Integrated Security=True";
+                SqlConnection cnn = new SqlConnection(conString); 
                 cnn.Open();
                 string sql = "select * from Category where id = Parentid";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, cnn);
@@ -47,9 +74,10 @@ namespace Rehearsal_CS486_Team11
                         int[] catID;
                         string[] childCatName = null;
                         DataSet dataTmp = new DataSet();
-                        sql = "select * from Category where id <> Parenid and Parentid = "
+                        sql = "select * from Category where id <> Parentid and Parentid = "
                             + row[0].ToString();
                         adapter = new SqlDataAdapter(sql, cnn);
+                        adapter.Fill(dataTmp);
                         if(dataTmp.Tables.Count > 0)
                         {
                             int countUp = 0;
@@ -59,6 +87,7 @@ namespace Rehearsal_CS486_Team11
                             {
                                 catID[countUp] = int.Parse(rowTmp[0].ToString());
                                 childCatName[countUp] = rowTmp[1].ToString();
+                                countUp++;
                             }
                             addSong(dataTmp.Tables[0].Rows.Count, row[1].ToString(), childCatName, catID);
                         } 
@@ -110,12 +139,7 @@ namespace Rehearsal_CS486_Team11
         public void button_click(object sender, EventArgs s)
         {
             Button button = sender as Button;
-            clrHotSongPanel();
-            //initHotSongPanel(int.Parse(button.Name));
-        }
-        public void clrHotSongPanel()
-        {
-            //hotSongPanel.Controls.Clear();
+            LoadMusic(int.Parse(button.Name));
         }
     }
 }

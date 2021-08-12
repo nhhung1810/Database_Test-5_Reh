@@ -16,7 +16,7 @@ namespace Rehearsal_CS486_Team11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MusicList());
+            Application.Run(new FormKhoa());
         }
     }
 }
