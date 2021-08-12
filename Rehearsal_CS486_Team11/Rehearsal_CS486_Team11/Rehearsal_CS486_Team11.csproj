@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,8 +53,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddCatSong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCatSong.Designer.cs">
+      <DependentUpon>FormAddCatSong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCat.Designer.cs">
+      <DependentUpon>FormAddCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddAuthor.Designer.cs">
+      <DependentUpon>FormAddAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddCatSong.resx">
+      <DependentUpon>FormAddCatSong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddAuthor.resx">
+      <DependentUpon>FormAddAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddCat.resx">
+      <DependentUpon>FormAddCat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
