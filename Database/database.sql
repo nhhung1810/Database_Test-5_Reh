@@ -198,6 +198,8 @@ insert into SongAuthor(SongID, AuthorId) values
 (9,6),
 (10,7)
 
+EXEC addAuthor 1, 'Name';
+
 go
 use master
 go
