@@ -48,4 +48,43 @@ create table Songcat(
 go
 use master
 go
-drop database CS486_Team11_DB
+insert into Category(id, name, parentId)
+values
+(1,'Viet Nam',1),
+(2,'Au My',2),
+(3,'Chau A',3),
+(4,'Khac', 4),
+(5,'Nhac Tre',1),
+(6,'Rap Viet',1),
+(7,'Rock Viet',1),
+(8,'Cach Mang',1),
+(9,'Nhac Trinh',1),
+(10,'Remix Viet',1),
+(12,'Tien Chien',1),
+(13,'Pop',2),
+(14,'Rock',2),
+(15,'Electroca/Dance',2),
+(16,'Blue/Jazz',2),
+(17,'Country',2),
+(18,'R&B',2),
+(19,'Nhac Han',3),
+(20,'Nhac Nhat',3),
+(21,'Nhac Hoa',3),
+(22,'Nhac Thai',3),
+(23,'Thieu Nhi', 4),
+(24,'Khong Loi', 4),
+(25,'Beat',4)
+
+insert into Song(id, name, releaseData, views, official,quality)
+values
+(1,'Do toc 2', '2021-08-10', 60557, 1, 'HQ'),
+(2,'Gap go, yeu duong va duoc ben em', '2021-08-04', 73849, 1, 'HQ'),
+(3,'Cho anh xin mot chut huong thom', '2021-07-30', 535, 1, 'HQ'),
+(4,'Toi la nguoi Viet Nam', '2021-08-02', 4541, 1, 'HQ'),
+(5,'Hoa bay vao tim', '2021-05-09', 3028, 0, 'SQ'),
+(6,'Nhat Than', '2021-06-05', 113682, 0, 'SQ'),
+(7,'Neu nhu ngay do', '2021-07-22', 33157, 1, 'HQ'),
+(8,'Khong ly do', '2021-08-01', 1910, 0, 'SQ'),
+(9,'Quen Mot nguoi that kho', '2021-05-25', 237427, 1, 'HQ'),
+(10,'Khi nguoi lon co don', '2021-05-11', 60557, 1, 'HQ')
+
