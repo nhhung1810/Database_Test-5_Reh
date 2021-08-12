@@ -16,5 +16,15 @@ namespace TestApplication.Get
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from song";
+            DataSet ds = Misc.getData(sql);
+            if(ds != null && ds.Tables.Count > 0)
+            {
+                dataGrid.DataSource = ds.Tables[0];
+            }
+        }
     }
 }
