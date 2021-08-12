@@ -74,7 +74,7 @@ values
 (24,'Khong Loi', 4),
 (25,'Beat',4)
 
-insert into Song(id, name, releaseData, views, official,quality)
+insert into Song(id, name, releaseDate, views, official,quality)
 values
 (1,'Do toc 2', '2021-08-10', 60557, 1, 'HQ'),
 (2,'Gap go, yeu duong va duoc ben em', '2021-08-04', 73849, 1, 'HQ'),
@@ -87,7 +87,7 @@ values
 (9,'Quen Mot nguoi that kho', '2021-05-25', 237427, 1, 'HQ'),
 (10,'Khi nguoi lon co don', '2021-05-11', 60557, 1, 'HQ')
 
-insert into CatSong(catid,songId)
+insert into Songcat(catid,songId)
 values
 (1,5),
 (2,6),
@@ -116,8 +116,7 @@ values
 (12,'Cao Nam Thanh'),
 (13,'Quang Vinh')
 
-insert into songAuthor(SongID, AuthorId)
-values
+insert into SongAuthor(SongID, AuthorId) values
 (1,1),
 (2,1),
 (3,1),
@@ -127,10 +126,7 @@ values
 (7,4),
 (8,5),
 (9,6),
-(10,7),
-(11,8),
-(12,9),
-(13,10)
+(10,7)
 
 go
 use master
