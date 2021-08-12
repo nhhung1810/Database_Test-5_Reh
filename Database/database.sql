@@ -118,6 +118,7 @@ values
 
 insert into SongAuthor(SongID, AuthorId) values
 (1,1),
+(1,2),
 (2,1),
 (3,1),
 (4,2),
@@ -127,6 +128,30 @@ insert into SongAuthor(SongID, AuthorId) values
 (8,5),
 (9,6),
 (10,7)
+
+
+-- PROCEDURE
+-- create or alter PROCEDURE
+go
+
+create or alter function getSongList(@category int)
+returns table
+AS
+    return(
+        select 
+            s.name, STRING_AGG(a.name, ', ') as authorNames,
+            s.official, s.quality, s.views 
+        from Song as s
+        join SongAuthor as sa on s.id = sa.SongID
+        join author as a on sa.AuthorId = a.id
+        join Songcat as sc on sc.Songid = s.id
+        where sc.Catid = @category
+        group by s.id, s.name, s.official, s.quality, s.views 
+    )
+
+go
+
+-- SELECT * from dbo.getSongList(5)
 
 go
 use master
