@@ -1,0 +1,11 @@
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.exe.config
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.exe
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\bin\Debug\Rehearsal_CS486_Team11.pdb
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csprojAssemblyReference.cache
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.AddSongForm.resources
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.Form1.resources
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.Properties.Resources.resources
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csproj.GenerateResource.cache
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.csproj.CoreCompileInputs.cache
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.exe
+D:\HOCDAI\DATABASE\test\5\git\Database_Test-5_Reh\Rehearsal_CS486_Team11\Rehearsal_CS486_Team11\obj\Debug\Rehearsal_CS486_Team11.pdb
