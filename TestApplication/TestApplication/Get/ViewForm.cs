@@ -24,6 +24,7 @@ namespace TestApplication.Get
             if(ds != null && ds.Tables.Count > 0)
             {
                 dataGrid.DataSource = ds.Tables[0];
+                Misc.setFillGridView(dataGrid);
             }
         }
 
@@ -32,13 +33,14 @@ namespace TestApplication.Get
             string q = "select * from song where id = @id";
             Dictionary<string, string> ps = new Dictionary<string, string>()
             {
-                {"id", "(1, 2, 4, 5)"}
+                {"id", "1"}
             };
 
             DataTable dt = Misc.getData(q, ps);
             if(dt != null && dt.Rows.Count > 0)
             {
                 dataGrid.DataSource = dt;
+                Misc.setFillGridView(dataGrid);
             }
         }
     }

@@ -12,6 +12,12 @@ namespace TestApplication
     public static class Connection{
         public static string[] connectionString = new string[6];
         public static int control;
+        /// <summary>
+        /// If you want to custom your connection string, not from the list below
+        /// please set "isCustom" variable to true and set "customConnectionString" to yours
+        /// </summary>
+        public static bool isCustom = false;
+        public static string customConnectionString = "Your-Connection-String-Here";
 
         static Connection()
         {
@@ -36,6 +42,9 @@ namespace TestApplication
             Trung = 5
         }
 
+        //================================================================================
+        //SQL Connection Automatically
+
         public static void setConnection(connectBy name){
             Connection.control = (int)name;
             return;
@@ -43,8 +52,14 @@ namespace TestApplication
 
         public static string getConnectionString()
         {
-            return Connection.connectionString[Connection.control];
+            if (!Connection.isCustom)
+                return Connection.connectionString[Connection.control];
+            else 
+                return Connection.customConnectionString;
         }
+
+        //=================================================================================
+        //SQL - fetch data and exceute command Utilities
 
         public static DataSet getData(string q)
         {
@@ -117,6 +132,22 @@ namespace TestApplication
                 
             }
             return dt;
+        }
+
+        //=====================================================================
+        //Others
+
+
+        /// <summary>
+        /// Inject a Derived of DataGridView object into this function
+        /// and it will set the collumn to Fill mode
+        /// </summary>
+        /// <param name="view"></param>
+        public static void setFillGridView(DataGridView view)
+        {
+            if (view == null && view.ColumnCount < 1) return;
+            foreach (DataGridViewColumn col in view.Columns)
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }
