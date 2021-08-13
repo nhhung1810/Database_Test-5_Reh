@@ -141,13 +141,24 @@ CREATE OR ALTER PROCEDURE addSong
 @quality varchar(5),
 @releaseDate date
 AS
+BEGIN TRANSACTION
+BEGIN TRY
 IF EXISTS (SELECT id 
 		   FROM Song 
 		   WHERE id = @id)
-	RETURN
-ELSE
-	INSERT INTO Song (id, name, views, official, quality, releaseDate) 
-	VALUES (@id, @name, @views, @official, @quality, @releaseDate);
+	THROW 50000, 'The ID of the song has existed', 1;
+
+	BEGIN
+		INSERT INTO Song (id, name, views, official, quality, releaseDate) 
+		VALUES (@id, @name, @views, @official, @quality, @releaseDate);
+		COMMIT TRANSACTION;
+	END
+END TRY
+
+BEGIN CATCH
+	ROLLBACK TRANSACTION;
+	THROW;
+END CATCH;
 GO
 
 CREATE OR ALTER PROCEDURE addAuthor
@@ -228,4 +239,4 @@ go
 go
 use master
 go
-drop database CS486_Team11_DB
+--drop database CS486_Team11_DB
