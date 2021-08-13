@@ -1,6 +1,6 @@
 ﻿namespace Rehearsal_CS486_Team11
 {
-    partial class Form1
+    partial class MusicList
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // flowPanel
+            // 
+            this.flowPanel.Location = new System.Drawing.Point(13, 13);
+            this.flowPanel.Name = "flowPanel";
+            this.flowPanel.Size = new System.Drawing.Size(775, 425);
+            this.flowPanel.TabIndex = 0;
+            this.flowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
+            // 
+            // MusicList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Controls.Add(this.flowPanel);
+            this.Name = "MusicList";
+            this.Text = "MusicList";
+            this.Load += new System.EventHandler(this.MusicList_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowPanel;
     }
 }
-

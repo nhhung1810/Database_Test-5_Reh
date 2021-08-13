@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rehearsal_CS486_Team11
 {
-    public partial class Form1 : Form
+    public partial class AddCatSongForm : Form
     {
-        public Form1()
+        public AddCatSongForm()
         {
             InitializeComponent();
         }

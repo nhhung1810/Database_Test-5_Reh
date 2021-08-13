@@ -1,0 +1,10 @@
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\bin\Debug\remakeMusic-_-.exe.config
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\bin\Debug\remakeMusic-_-.exe
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\bin\Debug\remakeMusic-_-.pdb
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic-_-.csproj.AssemblyReference.cache
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic___.FormAddSong.resources
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic___.Properties.Resources.resources
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic-_-.csproj.GenerateResource.cache
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic-_-.csproj.CoreCompileInputs.cache
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic-_-.exe
+C:\Users\vntua\source\repos\remakeMusic-_-\remakeMusic-_-\obj\Debug\remakeMusic-_-.pdb

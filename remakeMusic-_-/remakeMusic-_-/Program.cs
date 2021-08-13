@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rehearsal_CS486_Team11
+namespace remakeMusic___
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Rehearsal_CS486_Team11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormKhoa());
+            Application.Run(new FormAddSong());
         }
     }
 }

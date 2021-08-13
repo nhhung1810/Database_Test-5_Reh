@@ -1,3 +1,5 @@
+
+
 use master
 go
 create database CS486_Team11_DB
@@ -118,6 +120,7 @@ values
 
 insert into SongAuthor(SongID, AuthorId) values
 (1,1),
+(1,2),
 (2,1),
 (3,1),
 (4,2),
@@ -129,6 +132,111 @@ insert into SongAuthor(SongID, AuthorId) values
 (10,7)
 
 go
+
+CREATE OR ALTER PROCEDURE addSong
+@id int,
+@name NVARCHAR(100),
+@views int,
+@official int,
+@quality varchar(5),
+@releaseDate date
+AS
+BEGIN TRANSACTION
+BEGIN TRY
+IF EXISTS (SELECT id 
+		   FROM Song 
+		   WHERE id = @id)
+	THROW 50000, 'The ID of the song has existed', 1;
+
+	BEGIN
+		INSERT INTO Song (id, name, views, official, quality, releaseDate) 
+		VALUES (@id, @name, @views, @official, @quality, @releaseDate);
+		COMMIT TRANSACTION;
+	END
+END TRY
+
+BEGIN CATCH
+	ROLLBACK TRANSACTION;
+	THROW;
+END CATCH;
+GO
+
+CREATE OR ALTER PROCEDURE addAuthor
+@id int,
+@name NVARCHAR(100)
+AS
+IF EXISTS (SELECT id 
+		   FROM author 
+		   WHERE id = @id)
+	RETURN
+ELSE
+	INSERT INTO Song (id, name) 
+	VALUES (@id, @name);
+GO
+
+CREATE OR ALTER PROCEDURE addSongAuthor
+@song int, 
+@author int
+AS
+IF EXISTS (SELECT * 
+		   FROM SongAuthor 
+		   WHERE SongID = @song)
+	RETURN
+ELSE
+	INSERT INTO SongAuthor(SongID, AuthorId) 
+	VALUES (@song, @author);
+GO
+
+CREATE OR ALTER PROCEDURE addCategory
+@id int,
+@name nvarchar(100),
+@parentId int
+AS
+IF EXISTS (SELECT * 
+		   FROM Category 
+		   WHERE id = @id)
+	RETURN
+ELSE
+	INSERT INTO Category(id, name, parentId) 
+	VALUES (@id, @name, @parentId);
+GO
+
+CREATE OR ALTER PROCEDURE addCatSong
+@song int,
+@cat int
+AS
+IF EXISTS (SELECT * 
+		   FROM Songcat 
+		   WHERE songId = @song)
+	RETURN
+ELSE
+	INSERT INTO Songcat (songId, catid) 
+	VALUES (@song, @cat);
+GO
+
+
+-- PROCEDURE
+-- create or alter PROCEDURE
+go
+
+create or alter function getSongList(@category int)
+returns table
+AS
+    return(
+        select 
+            s.name as name, STRING_AGG(a.name, ', ') as authorNames,
+            s.official as official, s.quality as quality, s.views as views 
+        from Song as s
+        join SongAuthor as sa on s.id = sa.SongID
+        join author as a on sa.AuthorId = a.id
+        join Songcat as sc on sc.Songid = s.id
+        where sc.Catid = @category
+        group by s.id, s.name, s.official, s.quality, s.views 
+    )
+
+go
+
+go
 use master
 go
-drop database CS486_Team11_DB
+--drop database CS486_Team11_DB
